@@ -61,7 +61,22 @@
          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
        }
      </style>
+     <script>
+     const secondHand = document.querySelector('.second-hand');
+     const minutesHand = document.querySelector('.min-hand');
+     function setDate(){
+       const now = new Date();
+       const seconds = now.getSeconds();
+       const minutes = now.getMinutes();
+       const secondsDegrees = ((seconds / 60) * 360) + 90;/*so 0s = 0degrees and 60s = 360degrees */
+       const minutesDegrees = ((minutes / 60) * 360) + 90;/*so 0s = 0degrees and 60s = 360degrees */
+       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+       minutesHand.style.transform = `rotate(${minutesDegrees}deg)`;
+     }
 
+     setInterval(setDate, 1000);
+
+     </script>
 
   </body>
 </html>
