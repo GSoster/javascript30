@@ -62,6 +62,18 @@
       justify-content: center;
       align-items: center;
     }
+
+
+/* hide the upper text and the bottom text all the way up and down*/
+.panel > *:first-child{
+  transform: translateY(-100%);
+}
+
+.panel > *:last-child{
+  transform: translateY(100%);
+}
+
+
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
