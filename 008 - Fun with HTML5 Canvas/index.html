@@ -23,7 +23,20 @@
     function draw(e)
     {
         if (!isDrawing) return; //stop the function from running when they are not mouseddown
+        
         console.log(e);
+        ctx.beginPath();
+        //start from
+        ctx.moveTo(lastX, lastY);
+        //go to
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();//actually draws the info
+        //update lastX, lastY vars
+        //both lines down below are the same as the used
+        //lastX = e.offsetX;
+        //lastY = e.offsetY;
+        // the 2 top lines are the same than this down one:
+        [lastX, lastY] = [e.offsetX, e.offsetY];
     }
 
     canvas.addEventListener('mousemove', draw);
